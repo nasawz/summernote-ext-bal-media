@@ -33,26 +33,6 @@
           title: '媒体库',
           hide: true
         });
-      },
-      helloDropdown: function (lang, options) {
-
-
-        var list = '<li><a data-event="helloDropdown" href="#" data-value="summernote">summernote</a></li>';
-        list += '<li><a data-event="helloDropdown" href="#" data-value="codemirror">Code Mirror</a></li>';
-        var dropdown = '<ul class="dropdown-menu">' + list + '</ul>';
-
-        return tmpl.iconButton(options.iconPrefix + 'header', {
-          title: 'hello',
-          hide: true,
-          dropdown : dropdown
-        });
-      },
-      helloImage : function (lang, options) {
-        return tmpl.iconButton(options.iconPrefix + 'file-image-o', {
-          event : 'helloImage',
-          title: 'helloImage',
-          hide: true
-        });
       }
 
     },
