@@ -12,13 +12,13 @@
   var tmpl = $.summernote.renderer.getTemplate();
 
   /**
-   * @class plugin.hello
+   * @class plugin.bal_media
    *
    * Hello Plugin
    */
   $.summernote.addPlugin({
     /** @property {String} name name of plugin */
-    name: 'hello',
+    name: 'bal_media',
     /**
      * @property {Object} buttons
      * @property {Function} buttons.hello   function to make button
@@ -26,11 +26,11 @@
      * @property {Function} buttons.helloImage   function to make button
      */
     buttons: { // buttons
-      hello: function (lang, options) {
+      bal_media: function (lang, options) {
 
-        return tmpl.iconButton(options.iconPrefix + 'header', {
-          event : 'hello',
-          title: 'hello',
+        return tmpl.iconButton(options.iconPrefix + 'archive', {
+          event : 'bal_media',
+          title: '媒体库',
           hide: true
         });
       },
@@ -64,25 +64,12 @@
      * @property {Function} events.helloImage run function when button that has a 'helloImage' event name  fires click
      */
     events: { // events
-      hello: function (event, editor, layoutInfo) {
+      bal_media: function (event, editor, layoutInfo) {
         // Get current editable node
         var $editable = layoutInfo.editable();
 
         // Call insertText with 'hello'
         editor.insertText($editable, 'hello ');
-      },
-      helloDropdown: function (event, editor, layoutInfo, value) {
-        // Get current editable node
-        var $editable = layoutInfo.editable();
-
-        // Call insertText with 'hello'
-        editor.insertText($editable, 'hello ' + value + '!!!!');
-      },
-      helloImage : function (event, editor, layoutInfo) {
-        var $editable = layoutInfo.editable();
-
-        var img = $('<img src="http://upload.wikimedia.org/wikipedia/commons/b/b0/NewTux.svg" />');
-        editor.insertNode($editable, img[0]);
       }
     }
   });
